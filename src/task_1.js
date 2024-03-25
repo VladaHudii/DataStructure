@@ -1,16 +1,13 @@
 fetch('https://jsonplaceholder.typicode.com/users')
   .then(response => response.json())
   .then(users => {
-      const selectedUsers = users.map(user => {
-        return {
-          id: user.id,
-          name: user.name,
-          email: user.email,
-          city: user.address.city
-        };
-      });
-      console.log(selectedUsers);
+    users.forEach(user => {
+      const userKeys = Object.keys(user);
+      const userValues = Object.values(user); 
+      console.log(userKeys);
+      console.log(userValues);
+      
   });
-
+  });
 
 
